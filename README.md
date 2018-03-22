@@ -1,28 +1,38 @@
 # Toy DHT
 
-As you expect, this is a simple DHT written for educational purposes. It is single-threaded, not thread-safe, not crazily fast. It runs on an emulated network.
+For serious DHT implementation, see my [`Pastry`][pastry_repo] repo. It is a
+Pythonic but incomplete implementation of the [Pastry DHT][pastry_dht].
 
-## Network Emulation
+To learn more about DHT in general, check out these videos by Anne-Marie
+Kermarrec.
 
-I do not have 500 computers. The Internet it runs on is emulated based on a JSON file. You can run `generate_network.py` to create another emulated Internet.
+_Routing in Distributed Hash Tables._
+https://www.youtube.com/watch?v=WqQRQz_XYg4
 
-## DHT Details
+_Dynamics in Distributed Hash Tables._
+https://www.youtube.com/watch?v=p8iugvHeGcg
 
-This program does not implement any "standard" DHT protocol. It is written for you to understand how DHT works.
+The original code in this `toy_dht` repository has been removed. To see the
+code, feel free to `git reset --hard <commit_hash>`. Please note that the
+original code can be misleading, though it produces fancy outputs.
 
-For simplicity, the key length is only 3 bytes. Practical DHT has a longer key length to cut down routing costs.
+If you are here for a silly analogy, here it is:
 
-To see the DHT network working, run `main.py` in your terminal.
+### DHT routing in a nutshell
 
-## Implemented
+For some reason, I wanted to chat with Barack Obama, but I did not know his
+phone number, so I asked a friend.
 
-- Discovering initial DHT peers and their responsibilities
-- Remembering peer addresses and metadata
-- Finding peers closest to a key
-- Finding the value bound to a key with a level-order traversal algorithm
+My friend had no idea what Obama’s phone number was, so he kindly asked me to
+call my rep.
 
-## Not Implemented (yet)
+I called my rep. He did not have Obama’s phone number, so he gave me the phone
+number of his colleague in Washington D.C.
 
-- Changing routing preference according to peer reputation
-- The "storage" of values
-- Responding to others
+I called his colleague. He knew Obama’s phone number.
+
+Finally, I got Obama's phone number.
+
+
+[pastry_repo]: https://github.com/MuxZeroNet/pastry
+[pastry_dht]: https://en.wikipedia.org/wiki/Pastry_(DHT)
